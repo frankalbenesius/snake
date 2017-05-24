@@ -1,0 +1,15 @@
+{
+  "name": "square",
+  "version": "1.0.0",
+  "author": "Frank Albenesius",
+  "license": "MIT",
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "webpack": "^2.6.0"
+  },
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "dependencies": {}
+}
