@@ -1,0 +1,17 @@
+html {
+  font-family: Menlo, monaco, monospace;
+  background-color: #eee;
+}
+
+.wrapper {
+  width: 40rem; /* 40 * 16px = 640px */
+  margin: 0 auto;
+  text-align: center;
+}
+
+canvas {
+  background-color: #fff;
+  width: 100%; /* 640px */
+  height: 30rem; /* 480px */
+  box-sizing: border-box;
+}
