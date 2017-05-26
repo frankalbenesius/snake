@@ -26,9 +26,6 @@ class Game {
     this.length = 1; // snake segment length
     this.growth = 10; // amount of segments the snake still needs to grow
     this.score = 0;
-    // while (--this.growth) {
-    //   this.increase();
-    // }
     this.food = this.unoccupied();
   }
   start(initDirection) {

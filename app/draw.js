@@ -1,5 +1,9 @@
 import { cellSize } from './constants';
 import game from './game';
+import getTransitionColor from './getTransitionColor';
+
+const blue = '4286f4'; // light green
+const yellow = 'f2eb35'; // dark green
 
 // TODO consolidate these constants
 const canvas = document.getElementById('canvas');
@@ -20,6 +24,21 @@ const draw = () => {
     cellSize,
   );
 
+  // draw snake body segments
+  let segment = game.head;
+  let n = 1;
+  while ((segment = segment.next)) {
+    const ratio = n / game.length;
+    context.fillStyle = getTransitionColor(blue, yellow, ratio);
+    context.fillRect(
+      segment.x * cellSize,
+      segment.y * cellSize,
+      cellSize,
+      cellSize,
+    );
+    n++;
+  }
+
   // draw snake head
   context.fillStyle = 'black';
   context.fillRect(
@@ -28,19 +47,6 @@ const draw = () => {
     cellSize,
     cellSize,
   );
-
-  // draw snake body segments
-  let segment = game.head;
-  let n = 0;
-  while ((segment = segment.next)) {
-    context.fillStyle = 'cyan';
-    context.fillRect(
-      segment.x * cellSize + 1,
-      segment.y * cellSize + 1,
-      cellSize - 2,
-      cellSize - 2,
-    );
-  }
 
   // draw score
   // TODO: move outside canvas
