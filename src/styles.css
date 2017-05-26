@@ -4,26 +4,27 @@ html {
 }
 
 .wrapper {
-  width: 40rem; /* 40 * 16px = 640px */
+  width: 30rem; /* 480px */
   margin: 0 auto;
-  text-align: center;
+  text-align: center;ta
 }
 
 canvas {
   background-color: #f8f9f8;
-  width: 100%; /* 640px */
-  height: 30rem; /* 480px */
+  width: 100%; /* 448px */
+  height: 21rem; /* 480px */
 }
 
 section {
+  font-size: 0.9rem;
   margin: 1.2rem;
 }
 
 p {
-  line-height: 1.2rem;
+  line-height: 1.1rem;
   margin: 0;
 }
 
 .larger {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
