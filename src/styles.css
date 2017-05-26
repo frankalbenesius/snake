@@ -1,6 +1,6 @@
 html {
   font-family: Menlo, monaco, monospace;
-  background-color: #eee;
+  background-color: #c9d5cf;
 }
 
 .wrapper {
@@ -10,8 +10,20 @@ html {
 }
 
 canvas {
-  background-color: #fff;
+  background-color: #f8f9f8;
   width: 100%; /* 640px */
   height: 30rem; /* 480px */
-  box-sizing: border-box;
+}
+
+section {
+  margin: 1.2rem;
+}
+
+p {
+  line-height: 1.2rem;
+  margin: 0;
+}
+
+.larger {
+  font-size: 1.4rem;
 }

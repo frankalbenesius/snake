@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>SNAKE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <!--
+    --..,_                     _,.--.
+       `'.'.                .'`__ o  `;__.
+          '.'.            .'.'`  '---'`  `
+            '.`'--....--'`.'
+              `'--....--'`
+    -->
+  </head>
+  <body>
+    <div class='wrapper'>
+      <h1>SNAKE</h1>
+
+      <section>
+        <p>Eat that sweet, sweet orange food to <i>grow</i>.<p>
+        <p>You'll die if you try to eat yourself or a wall.<p>
+        <p>Use the arrow keys to turn or start the game.</p>
+      </section>
+
+      <section>
+        <p class='larger'>Meals Eaten: <span id='score'>0</span></p>
+        <p>Most Fulfilling Life: <span id='highScore'>0</span></p>
+      </section>
+
+      <canvas id='canvas'></canvas>
+    </div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
