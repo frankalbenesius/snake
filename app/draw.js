@@ -2,8 +2,11 @@ import { cellSize } from './constants';
 import game from './game';
 import getTransitionColor from './getTransitionColor';
 
-const blue = '4286f4'; // light green
-const yellow = 'f2eb35'; // dark green
+// colors based on palette: https://palx.jxnblk.com/35f28a
+const black = '#36413b';
+const green = '#35f287';
+const orange = '#f28735';
+const fuschia = '#e535f2';
 
 // TODO consolidate these constants
 const canvas = document.getElementById('canvas');
@@ -16,7 +19,7 @@ const draw = () => {
   context.globalAlpha = game.isPlaying() ? 1.0 : 0.5;
 
   // draw food
-  context.fillStyle = 'green';
+  context.fillStyle = orange;
   context.fillRect(
     game.food.x * cellSize,
     game.food.y * cellSize,
@@ -29,7 +32,7 @@ const draw = () => {
   let n = 1;
   while ((segment = segment.next)) {
     const ratio = n / game.length;
-    context.fillStyle = getTransitionColor(blue, yellow, ratio);
+    context.fillStyle = getTransitionColor(fuschia, green, ratio);
     context.fillRect(
       segment.x * cellSize,
       segment.y * cellSize,
@@ -40,7 +43,7 @@ const draw = () => {
   }
 
   // draw snake head
-  context.fillStyle = 'black';
+  context.fillStyle = black;
   context.fillRect(
     game.head.x * cellSize,
     game.head.y * cellSize,
@@ -50,7 +53,7 @@ const draw = () => {
 
   // draw score
   // TODO: move outside canvas
-  context.fillStyle = 'green';
+  context.fillStyle = black;
   context.font = 'bold 1rem arial';
   context.fillText(game.score.toString(), 10, 30);
 };
