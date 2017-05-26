@@ -10,6 +10,7 @@ A simple snake game.
 
 ## Next Steps
 
-1. Add a pause command.
-2. Add a simple database and player name input for global high scores.
-3. Make it work on mobile by allowing the canvas to be a dynamic size and using swipe gestures for directional controls.
+1. Make the end game screen more obvious/satisfying.
+2. Add a pause command.
+3. Add a simple database and player name input for global high scores.
+4. Make it work on mobile by allowing the canvas to be a dynamic size and using swipe gestures for directional controls.
