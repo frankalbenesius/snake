@@ -9,7 +9,7 @@ const context = canvas.getContext('2d');
 
 const draw = () => {
   context.clearRect(0, 0, width, height);
-  context.globalAlpha = game.isPlaying ? 1.0 : 0.5;
+  context.globalAlpha = game.isPlaying() ? 1.0 : 0.5;
 
   // draw food
   context.fillStyle = 'green';

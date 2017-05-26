@@ -2,43 +2,34 @@ import game from './game';
 import { keys, directions } from './constants';
 
 const handleKeydown = e => {
-  let handled = false;
+  let direction;
 
-  if (game.isPlaying()) {
-    switch (e.keyCode) {
-      case keys.left: {
-        game.move(directions.left);
-        handled = true;
-        break;
-      }
-      case keys.right: {
-        game.move(directions.right);
-        handled = true;
-        break;
-      }
-      case keys.up: {
-        game.move(directions.up);
-        handled = true;
-        break;
-      }
-      case keys.down: {
-        game.move(directions.down);
-        handled = true;
-        break;
-      }
-      case keys.esc: {
-        game.end();
-        handled = true;
-        break;
-      }
+  switch (e.keyCode) {
+    case keys.left: {
+      direction = directions.left;
+      break;
     }
-  } else if (e.keyCode == keys.space) {
-    game.start();
-    handled = true;
+    case keys.right: {
+      direction = directions.right;
+      break;
+    }
+    case keys.up: {
+      direction = directions.up;
+      break;
+    }
+    case keys.down: {
+      direction = directions.down;
+      break;
+    }
   }
 
-  if (handled) {
-    e.preventDefault(); // if key even was used for game, stop event bubbling
+  if (direction != undefined) {
+    e.preventDefault();
+    if (game.isPlaying()) {
+      game.move(direction);
+    } else {
+      game.start(direction);
+    }
   }
 };
 

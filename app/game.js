@@ -1,4 +1,4 @@
-import { directions, initialDirection, stepThreshold } from './constants';
+import { directions, stepThreshold } from './constants';
 
 const canvas = document.getElementById('canvas');
 const width = (canvas.width = canvas.offsetWidth);
@@ -9,11 +9,6 @@ const cells = {
   wide: width / cellSize,
   high: height / cellSize,
 };
-console.log('cellSize', cellSize);
-console.log('width', width);
-console.log('cells wide', cells.wide);
-console.log('height', height);
-console.log('cells high', cells.high);
 
 const growBy = 10;
 class Game {
@@ -21,11 +16,9 @@ class Game {
     this.reset();
   }
   reset() {
-    console.log('reset');
     this.playing = false; //TODO switch to false
     this.secondsSinceStep = 0; // seconds since last update
     this.moves = []; // moves queue
-    this.direction = initialDirection; // current head direction
     this.head = this.tail = {
       x: Math.round(cells.wide / 2),
       y: Math.round(cells.high / 2),
@@ -38,8 +31,10 @@ class Game {
     // }
     this.food = this.unoccupied();
   }
-  start() {
+  start(initDirection) {
     this.reset();
+    this.direction = initDirection;
+    this.food = this.unoccupied();
     this.playing = true;
   }
   end() {
