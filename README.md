@@ -2,6 +2,10 @@
 
 A simple snake game.
 
+## Demo
+
+You can play the game [here](https://snake.albenesi.us).
+
 ## Usage
 
 1. Install webpack by running `npm install` or `yarn install`.
